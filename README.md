@@ -56,29 +56,7 @@ Epoch 1 completed, Average Loss: 7.55
 Sample generation: <BOS> ... acknowledgment shared announcements ...
 Epoch 2 completed, Average Loss: 6.74
 
-🚀 Deployment Options
-💠 Gradio App (for Hugging Face Spaces)
-import gradio as gr
-from model import SimpleLLM, generate_text
 
-model = SimpleLLM(vocab_size=3000)
-model.load_state_dict(torch.load("simple_llm.pth", map_location="cpu"))
-model.eval()
-
-def predict(prompt):
-    return generate_text(model, tokenizer, prompt, max_len=100)
-
-gr.Interface(fn=predict, inputs="text", outputs="text", title="SimpleLLM - Text Generator").launch()
-
-🌐 Streamlit App (for GitHub / Cloud)
-import streamlit as st
-from model import SimpleLLM, generate_text
-
-st.title("🧠 SimpleLLM – Research Language Model")
-prompt = st.text_area("Enter your prompt:")
-if st.button("Generate"):
-    output = generate_text(model, tokenizer, prompt, max_len=100)
-    st.write(output)
 
 ⚖️ Ethical Disclaimer
 
@@ -91,6 +69,8 @@ How attention mechanisms highlight contextual relationships
 It must not be used for misinformation, propaganda, or political influence.
 The dataset may contain biased or controversial language — use with caution and awareness.
 
+'''
+***
 📂 Project Structure
 ├── model.py              # Transformer and attention code
 ├── train.py              # Training loop
@@ -100,9 +80,8 @@ The dataset may contain biased or controversial language — use with caution an
 ├── requirements.txt
 └── README.md
 
-🧪 Example Usage
-python train.py
-python app.py
+***
+'''
 
 🧑‍💻 Author
 
